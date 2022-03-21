@@ -25,6 +25,9 @@ public class SnakeAndLadder {
             if(startposition<0){
                 startposition=0;
             }
+            if(startposition>100){
+                startposition=startposition-dicenumber;
+            }
         }
     }
 }

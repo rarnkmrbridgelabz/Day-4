@@ -8,18 +8,23 @@ public class SnakeAndLadder {
         System.out.println("Welcome to Snake & Ladder Game");
         String player1;
         int startposition = 0;
-        int dicenumber = (int) (Math.random()*6)+1;
-        System.out.println("Your Random Dice Number(1to6) is:"+dicenumber);
-        int option = (int) (Math.random()*3);
-        System.out.println("Your Random options(0,1,2) is: "+option);
-        switch (option) {
-            case LADDER :
-                startposition = startposition + dicenumber;
-                break;
-            case SNAKE :
-                startposition = startposition - dicenumber;
-                break;
+        while(startposition<100) {
+            int dicenumber = (int) (Math.random() * 6) + 1;
+            System.out.println("Your Random Dice Number(1to6) is:" + dicenumber);
+            int option = (int) (Math.random() * 3);
+            System.out.println("Your Random options(0,1,2) is: " + option);
+            switch (option) {
+                case LADDER:
+                    startposition = startposition + dicenumber;
+                    break;
+                case SNAKE:
+                    startposition = startposition - dicenumber;
+                    break;
+            }
+            System.out.println("startposition : " + startposition);
+            if(startposition<0){
+                startposition=0;
+            }
         }
-        System.out.println("startposition : "+startposition);
     }
 }

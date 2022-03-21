@@ -8,8 +8,10 @@ public class SnakeAndLadder {
         System.out.println("Welcome to Snake & Ladder Game");
         String player1;
         int startposition = 0;
+        int rolls = 0;
         while(startposition<100) {
             int dicenumber = (int) (Math.random() * 6) + 1;
+            rolls++;
             System.out.println("Your Random Dice Number(1to6) is:" + dicenumber);
             int option = (int) (Math.random() * 3);
             System.out.println("Your Random options(0,1,2) is: " + option);
@@ -28,6 +30,8 @@ public class SnakeAndLadder {
             if(startposition>100){
                 startposition=startposition-dicenumber;
             }
+            System.out.println("Position after every dice roll: "+startposition);
         }
+        System.out.println("Total number of times the dice played to win the Game: "+rolls);
     }
 }
